@@ -25,7 +25,7 @@ if [[ ( -L $imagedir/etc/resolv.conf ) && ( ! -e $imagedir/etc/resolv.conf ) ]];
   mv $imagedir/etc/resolv.conf $imagedir/etc/resolv.conf.bak;
 fi
 
-cp /etc/resolv.conf $imagedir/etc/
+cp --remove-destination /etc/resolv.conf $imagedir/etc/
 
 # Upgrade and install packages on the target file system
 # Chroot needs to mount proc/sys/dev to function properly
